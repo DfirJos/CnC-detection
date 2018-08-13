@@ -4,7 +4,7 @@ C&C beacons are used to poll the C&C server for further instructions. These beac
 
 ![Image of alert](https://raw.githubusercontent.com/sjosz/CnC-detection/master/Images/alert.png)
 
-Two Bro script are developed which can be run simultaneously. The first Bro script (cnc_type1.bro) detects C&C traffic leveraging the lack of payload size variance in a sequence of packets in one TCP flow. Since malware agents often creates a new connection for each call to the C&C server, a second script was needed. This script detects C&C traffic leveraging the lack of TCP flow size variance in a sequence of TCP flows to the same IP address.
+The two Bro scripts cnc_type1.bro and cnc_type2.bro are can be run simultaneously. The first Bro script detects C&C traffic leveraging the lack of payload size variance in a sequence of packets in one TCP flow. Since malware agents often creates a new connection for each call to the C&C server, a second script was needed. This script detects C&C traffic leveraging the lack of TCP flow size variance in a sequence of TCP flows to the same IP address.
 
 The script succesfully detects C&C channels launched with agents from PowerShell Empire, Metasploit Meterpreter and Cobalt Strike.
 
