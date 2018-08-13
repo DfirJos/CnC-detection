@@ -1,3 +1,5 @@
+# Requires Bro-Osquery to be installed
+
 module cnc_type2;
 
 export {

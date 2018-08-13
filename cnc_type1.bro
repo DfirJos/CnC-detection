@@ -1,12 +1,17 @@
-# -------------------------------------------------
-# Bro script to detect Domain Fronted C&C channels |
-# -------------------------------------------------
+# ---------------------------------------------------
+# Bro script to detect (Domain Fronted) C&C channels |
+# ---------------------------------------------------
 
 # C&C beacons are used to poll the C&C server for further instructions.
 # These beacons often have a stream of packets sharing the same
 # payload size which provides chances for detection. This script
 # aims to detect C&C traffic leveraging the lack of payload
-# size variance in a stream of TCP packets in a TCP flow.
+# size variance in a stream of TCP packets in a TCP flow. With help of
+# Bro-Osquery the detected C&C traffic is correlated with host-level 
+# information (such as process name and path) from the infected end-point.
+#
+# Note: Both scripts needs to be rebuild due the heavy load it requires. 
+# Note2: Only 'cnc_type2.bro' works with correlation
 #
 # - Jos Clephas
 
@@ -125,6 +130,3 @@ event tcp_packet(c: connection, is_orig: bool, flags: string, seq: count, ack: c
 	}
 	
 }
-
-# Todo:
-# - Built correlation
