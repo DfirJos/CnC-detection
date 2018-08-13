@@ -11,6 +11,3 @@ The script succesfully detects C&C channels configured with PowerShell Empire, M
 ## Requirements
 - Bro: https://github.com/bro
 - Bro-Osquery: https://github.com/bro/bro-osquery
-
-## Installation
-- Place Bro scripts in $PREFIX/share/bro/site/osquery (default $PREFIX is /usr/local/bro)
